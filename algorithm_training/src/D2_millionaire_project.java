@@ -14,6 +14,7 @@ public class D2_millionaire_project {
 			//입력 버퍼 생성
 			BufferedReader bufReader = new BufferedReader(filereader);
 			String line = "", prize_str = "";
+			boolean is_deorder;
 			int total_repeat = 0, array_size = 1, i = 0;
 			while((line = bufReader.readLine()) != null)
 			{
@@ -36,8 +37,14 @@ public class D2_millionaire_project {
 						//매매가가 내림차순인 경우 아무것도 팔면 안된다.
 						for(int idx = 0; idx < array_size; idx++)
 						{
-							
+							if(prize_num[i] < prize_num[i+1])
+								is_deorder = false;
+							else
+								is_deorder = true;
 						}
+						//내림차순 인 경우
+						//if(is_deorder)
+							
 					}
 					
 				}
