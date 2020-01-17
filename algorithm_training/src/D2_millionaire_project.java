@@ -8,9 +8,10 @@ public class D2_millionaire_project {
 		//read input data
 		try {
 			//파일 객체 생성
-			File file = new File("D:\\algorithm_training\\input\\D2_millionaire_project.txt");
+			File file_in = new File("D:\\algorithm_training\\input\\D2_millionaire_project.txt");
+			File file_out = new File("D:\\algorithm_training\\output\\D2_millionaire_project.txt");
 			//입력 스트림 생성
-			FileReader filereader = new FileReader(file);
+			FileReader filereader = new FileReader(file_in);
 			//입력 버퍼 생성
 			BufferedReader bufReader = new BufferedReader(filereader);
 			String line = "", prize_str = "";
