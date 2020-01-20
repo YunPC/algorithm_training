@@ -26,6 +26,7 @@ public class D2_millionaire_project {
 						array_size = Integer.parseInt(line);
 					else
 					{	//여기 오면 한 케이스를 다 읽은 경우!
+						//System.out.println("어레이 사이즈:"+array_size);	
 						prize_str = line;
 						//다 읽었으면 array_size만큼 선언을 해주자!(메모리 문제 발생할 것 같음)
 						int[] prize_num = new int[array_size];
@@ -33,7 +34,10 @@ public class D2_millionaire_project {
 						for(int idx = 0; idx < array_size; idx++)
 						{
 							prize_num[idx] = Integer.parseInt(prize_str.split(" ")[idx]);
+							//System.out.print("가격 배열: "+prize_num[idx]);
+							//System.out.println();
 						}
+						
 						//매매가가 내림차순인 경우 아무것도 팔면 안된다.
 						for(int idx = 0; idx < array_size -1; idx++)
 						{
@@ -45,7 +49,7 @@ public class D2_millionaire_project {
 							//내림차순이 아닌 경우 (최대 이익을 낼 수 있는 경우)
 							if(prize_num[idx] > prize_num[idx+1])
 							{
-								profit = item_num*prize_num[idx+1] - sum;
+								profit += item_num*prize_num[idx+1] - sum;
 								item_num = 0;
 								sum = 0;
 							}
